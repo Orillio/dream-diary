@@ -1,7 +1,8 @@
-import 'package:dream_diary/home/home_page.dart';
 import 'package:dream_diary/themes/dark_theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'scaffold_page.dart';
 
 void main() {
   runApp(const Application());
@@ -16,8 +17,13 @@ class Application extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: DarkTheme.darkTheme,
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+        DefaultMaterialLocalizations.delegate,
+        DefaultWidgetsLocalizations.delegate,
+        DefaultCupertinoLocalizations.delegate,
+      ],
       title: 'Dream Diary',
-      home: Home(),
+      home: ScaffoldPage(),
     );
   }
 }

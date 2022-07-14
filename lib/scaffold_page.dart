@@ -1,31 +1,38 @@
-import 'package:dream_diary/models/bottom_navigation_model.dart';
+import 'package:dream_diary/provider_models/bottom_navigation_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/route_manager.dart';
 import 'package:provider/provider.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class ScaffoldPage extends StatelessWidget {
+  const ScaffoldPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (_) => BottomNavigationModel(), child: const _HomePage());
+        create: (_) => BottomNavigationModel(), child: const _ScaffoldPage());
   }
 }
 
-class _HomePage extends StatelessWidget {
-  const _HomePage({Key? key}) : super(key: key);
+class _ScaffoldPage extends StatelessWidget {
+  const _ScaffoldPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var bottomNavModel = context.watch<BottomNavigationModel>();
+    var pageController = PageController(
+      initialPage: bottomNavModel.selectedIndex,
+    );
     return Scaffold(
       bottomNavigationBar: SizedBox(
         height: 70,
         child: BottomNavigationBar(
           onTap: (index) {
-            bottomNavModel.selectedIndex = index;
+            pageController.animateToPage(
+              index,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+            );
           },
           currentIndex: bottomNavModel.selectedIndex,
           selectedLabelStyle: const TextStyle(
@@ -80,6 +87,13 @@ class _HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      body: PageView(
+        controller: pageController,
+        children: bottomNavModel.bottomBarItems,
+        onPageChanged: (newPageIndex) {
+          bottomNavModel.selectedIndex = newPageIndex;
+        },
       ),
     );
   }

@@ -26,4 +26,14 @@ flutter:
     - assets/home.svg
     - assets/notes.svg
     - assets/profile.svg
+    - assets/reset.svg
+  fonts:
+    - family: "Druk"
+      fonts:
+        - asset: assets/fonts/DrukMedium.otf
+          weight: 500
+        - asset: assets/fonts/DrukBold.otf
+          weight: 700
+        - asset: assets/fonts/DrukHeavy.otf
+          weight: 800
   uses-material-design: true

@@ -1,10 +1,17 @@
+import 'package:dream_diary/bottom_bar_items/community_page.dart';
+import 'package:dream_diary/bottom_bar_items/diary_page.dart';
+import 'package:dream_diary/bottom_bar_items/home_page.dart';
+import 'package:dream_diary/bottom_bar_items/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationModel extends ChangeNotifier {
   int _index = 0;
 
-  List<Widget> bottomBarItems = [
-
+  List<Widget> bottomBarItems = const [
+    HomePage(),
+    DiaryPage(),
+    CommunityPage(),
+    ProfilePage()
   ];
 
   set selectedIndex(int newIndex)  {
