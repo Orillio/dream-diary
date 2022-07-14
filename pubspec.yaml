@@ -13,6 +13,7 @@ dependencies:
   get: ^4.6.5
   provider: ^6.0.3
   awesome_notifications: ^0.6.21
+  flutter_svg: ^1.1.1+1
 
 dev_dependencies:
   flutter_test:
@@ -20,5 +21,9 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-
+  assets:
+    - assets/group.svg
+    - assets/home.svg
+    - assets/notes.svg
+    - assets/profile.svg
   uses-material-design: true

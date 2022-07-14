@@ -1,4 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:dream_diary/home/home_page.dart';
+import 'package:dream_diary/themes/dark_theme.dart';
+import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
 void main() {
@@ -10,8 +12,12 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetCupertinoApp(
+    return GetMaterialApp(
+      themeMode: ThemeMode.light,
+      theme: DarkTheme.darkTheme,
+      debugShowCheckedModeBanner: false,
       title: 'Dream Diary',
+      home: Home(),
     );
   }
 }
