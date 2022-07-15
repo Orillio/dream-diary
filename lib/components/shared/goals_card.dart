@@ -23,9 +23,9 @@ class GoalsCard extends StatelessWidget {
             padding: const EdgeInsets.only(top: 16),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.network(
+              child: goal.fromNetwork ? Image.network(
                 goal.imageUrl
-              ),
+              ) : Image.memory(goal!.rawImage!),
             ),
           ),
           Padding(

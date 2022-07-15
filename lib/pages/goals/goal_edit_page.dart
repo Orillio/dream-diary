@@ -26,6 +26,7 @@ class GoalEditPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ChangeNotifierProvider(
       create: (_) => EditGoalModel.fromGoal(_goal!),
       child: _GoalEditPage(),
@@ -66,7 +67,9 @@ class _GoalEditPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
-                        onTap: Get.back,
+                        onTap: () {
+                          Get.back();
+                        },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 20),
                           child: SvgPicture.asset("assets/arrow_back.svg"),

@@ -28,7 +28,7 @@ class _ScaffoldPage extends StatelessWidget {
     );
     return Scaffold(
       bottomNavigationBar: SizedBox(
-        height: Platform.isIOS ? 95 : 70,
+        height: Platform.isIOS ? 100 : 70,
         child: BottomNavigationBar(
           onTap: (index) {
             pageController.animateTo(
