@@ -17,11 +17,6 @@ class Application extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: DarkTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
-        DefaultMaterialLocalizations.delegate,
-        DefaultWidgetsLocalizations.delegate,
-        DefaultCupertinoLocalizations.delegate,
-      ],
       title: 'Dream Diary',
       home: ScaffoldPage(),
     );

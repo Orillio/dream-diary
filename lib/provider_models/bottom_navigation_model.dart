@@ -1,8 +1,8 @@
-import 'package:dream_diary/bottom_bar_items/community_page.dart';
-import 'package:dream_diary/bottom_bar_items/diary_page.dart';
-import 'package:dream_diary/bottom_bar_items/home_page.dart';
-import 'package:dream_diary/bottom_bar_items/profile_page.dart';
 import 'package:flutter/material.dart';
+import '../pages/community_page.dart';
+import '../pages/diary_page.dart';
+import '../pages/home_page.dart';
+import '../pages/profile_page.dart';
 
 class BottomNavigationModel extends ChangeNotifier {
   int _index = 0;

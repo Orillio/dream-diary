@@ -8,6 +8,7 @@ class DarkTheme {
       unselectedItemColor: Color(0xFFCAC4D0),
     ),
     scaffoldBackgroundColor: Color(0xFF1C1B1F),
+
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         letterSpacing: 1,
