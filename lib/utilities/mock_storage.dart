@@ -1,3 +1,4 @@
+import 'package:dream_diary/models/task.dart';
 import 'package:flutter/material.dart';
 
 import '../models/dream.dart';
@@ -14,12 +15,21 @@ class MockStorage extends ChangeNotifier {
   ];
   static List<Goal> goals = [
     Goal(
+      fromNetwork: true,
+      tasks: [
+        Task(text: "Оборудовать комнату",),
+        Task(text: "Помочь Диме с музыкой",),
+        Task(text: "Собраться втроем на прогон",)
+      ],
       imageUrl: "https://img.audiomania.ru/images/content/c1db7d0c0938a5e2eae2a73796eefcad.jpg",
       title: "Записать собственный трек",
       caption: "Друзья говорят, у меня получается неплохо петь. Вот и проверим!",
     )
   ];
 
+  notify() {
+    notifyListeners();
+  }
   addDream(Dream dream) {
     dreams.add(dream);
     notifyListeners();

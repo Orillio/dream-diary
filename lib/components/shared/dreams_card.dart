@@ -1,6 +1,8 @@
 import 'package:dream_diary/pages/goals/dreams_list_page.dart';
+import 'package:dream_diary/utilities/mock_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:provider/provider.dart';
 
 import '../../models/dream.dart';
 import '../../pages/goals/dream_page.dart';
@@ -11,9 +13,13 @@ class DreamsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var model = context.watch<MockStorage>();
+
     return GestureDetector(
       onTap: () {
-        Get.to(const DreamPage());
+        Get.to(DreamPage(dream: dream,))?.then((value) {
+          model.notify();
+        });
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

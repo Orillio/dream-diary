@@ -1,4 +1,5 @@
 import 'package:dream_diary/pages/goals/dreams_list_page.dart';
+import 'package:dream_diary/pages/goals/goal_edit_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -13,7 +14,7 @@ class GoalsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(const DreamPage());
+        Get.to(() => GoalEditPage.createFromGoal(goal));
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

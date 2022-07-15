@@ -357,6 +357,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.9"
+  theme:
+    dependency: "direct main"
+    description:
+      name: theme
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
+  themed:
+    dependency: "direct main"
+    description:
+      name: themed
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.2"
   translatable_text_field:
     dependency: "direct main"
     description:

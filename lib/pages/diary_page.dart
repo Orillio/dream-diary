@@ -4,6 +4,7 @@ import 'package:dream_diary/pages/goals/dreams_list_page.dart';
 import 'package:dream_diary/pages/goals/goals_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 import '../components/shared/goals_card.dart';
 import '../components/shared/title.dart';
@@ -14,6 +15,21 @@ class DiaryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) => MockStorage(),
+      child: const _DiaryPage(),
+    );
+  }
+}
+
+
+class _DiaryPage extends StatelessWidget {
+  const _DiaryPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var model = context.watch<MockStorage>();
+
     return SafeArea(
       child: RefreshIndicator(
         onRefresh: () async {},
@@ -48,7 +64,9 @@ class DiaryPage extends StatelessWidget {
                 YellowLink(
                   text: "Цели",
                   onTapCallback: () {
-                    Get.to(const GoalsListPage());
+                    Get.to(const GoalsListPage())?.then((value) {
+                      model.notify();
+                    });
                   },
                 ),
                 ListView.builder(
