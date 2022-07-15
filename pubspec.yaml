@@ -13,6 +13,7 @@ dependencies:
   get: ^4.6.5
   provider: ^6.0.3
   awesome_notifications: ^0.6.21
+  flutter_svg: ^1.1.1+1
 
 dev_dependencies:
   flutter_test:
@@ -20,5 +21,19 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-
+  assets:
+    - assets/group.svg
+    - assets/home.svg
+    - assets/notes.svg
+    - assets/profile.svg
+    - assets/reset.svg
+  fonts:
+    - family: "Druk"
+      fonts:
+        - asset: assets/fonts/DrukMedium.otf
+          weight: 500
+        - asset: assets/fonts/DrukBold.otf
+          weight: 700
+        - asset: assets/fonts/DrukHeavy.otf
+          weight: 800
   uses-material-design: true
