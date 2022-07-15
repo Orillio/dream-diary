@@ -1,10 +1,9 @@
 import 'package:dream_diary/components/shared/goals_card.dart';
 import 'package:dream_diary/components/shared/list_tasks_today.dart';
+import 'package:dream_diary/models/task.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
+import 'package:flutter_svg/svg.dart';
 import '../components/shared/title.dart';
-import '../models/goal.dart';
 import '../utilities/mock_storage.dart';
 
 class HomePage extends StatelessWidget {
@@ -52,13 +51,10 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const ListTasksToday(
-                    tasks: [
-                      "Оборудовать комнату",
-                      "Помочь Диме с музыкой",
-                      "Собраться втроем на прогон",
-                    ],
-                  )
+                  ListTasksToday(
+                    tasks: MockStorage.goals[0].tasks ?? [Task(text: "Дел нет")],
+                  ),
+
                 ],
               ),
             ),
