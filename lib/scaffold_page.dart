@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:dream_diary/provider_models/bottom_navigation_model.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/route_manager.dart';
@@ -25,11 +28,11 @@ class _ScaffoldPage extends StatelessWidget {
     );
     return Scaffold(
       bottomNavigationBar: SizedBox(
-        height: 70,
+        height: Platform.isIOS ? 95 : 70,
         child: BottomNavigationBar(
           onTap: (index) {
-            pageController.animateToPage(
-              index,
+            pageController.animateTo(
+              MediaQuery.of(context).size.width * index,
               duration: const Duration(milliseconds: 500),
               curve: Curves.easeInOut,
             );
